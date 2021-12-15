@@ -1,20 +1,16 @@
-# hands-on-demos
-
-Demos and lesson labs
-
 ## Launch initial stack
 
 You can run a initial stack using docker and docker compose. 
 
 With tha basic stack you going to deploy:
-- mysql database
+- **mysql** database
 	- For this database the default values are:
 	- user: root
 	- pass: example
 
-- mysql admin interface
+- **mysql admin interface**
 
-- sonarqube
+- **sonarqube**
 	- for sonarqube the dafault inital values are:
 	- user: admin
 	- pass: admin
@@ -25,7 +21,7 @@ With tha basic stack you going to deploy:
 
 Deploy the stack with the following comand
 
-```shell 
+```sh 
  docker-compose up -d
  # or
  docker-compose -p dev up -d
@@ -33,7 +29,7 @@ Deploy the stack with the following comand
 
 Remove / Destroy the stack
 
-```shell 
+```sh 
  docker-compose down
  # or 
  docker-compose -p dev down
@@ -41,7 +37,7 @@ Remove / Destroy the stack
 
 Start / Stop the stack
 
-```shell 
+```sh 
  docker-compose start
  docker-compose stop
  # or 
@@ -55,7 +51,7 @@ Start / Stop the stack
 
 1. If you are using `mvn` and have been using the defaul stack that is in this repo. only need to execute or onclude the follofing command foir each java app.
 
-```shell
+```sh
 mvn sonar:sonar
 ```
 > ***Note:*** If you are using a diferent sonar server or sonar cloud you nedd to configure each project accordingly with your server or account. 
