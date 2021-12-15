@@ -9,6 +9,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: school
+      MYSQL_USER: demo-user
+      MYSQL_PASSWORD: Nbmna.?ha1213
     ports:
       - 3306:3306
 
@@ -34,6 +37,9 @@ services:
     build:
       args:
         MYSQL_HOST: mysql
+        MYSQL_DATABASE: school
+        MYSQL_USER: demo-user
+        MYSQL_PASSWORD: Nbmna.?ha1213
       dockerfile: Dockerfile
       context: ./demo
     ports:

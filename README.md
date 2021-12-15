@@ -47,6 +47,18 @@ Start / Stop the stack
 
 ## Execute Sonar 
 
+### Disable Force User Authentication
+
+> This is only for use in a local machine.
+
+
+1. Go to sonar GUI [http://localhost:9000](http://localhost:9000)
+2. Go to administration section
+3. In security change the value of `Force user authentication` to false
+4. Save changes
+
+![force auth](./img/sonar-force-auth.png)
+
 ### Java
 
 1. If you are using `mvn` and have been using the defaul stack that is in this repo. only need to execute or include the following command for each java app.  
