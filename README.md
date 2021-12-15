@@ -49,9 +49,9 @@ Start / Stop the stack
 
 ### Java
 
-1. If you are using `mvn` and have been using the defaul stack that is in this repo. only need to execute or onclude the follofing command foir each java app.
+1. If you are using `mvn` and have been using the defaul stack that is in this repo. only need to execute or include the following command for each java app.  
 
 ```sh
 mvn sonar:sonar
 ```
-> ***Note:*** If you are using a diferent sonar server or sonar cloud you nedd to configure each project accordingly with your server or account. 
+> ***Note:*** If you are using a different sonar server or sonar cloud, you need to configure each project accordingly with your server or account. 
