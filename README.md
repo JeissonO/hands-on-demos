@@ -11,7 +11,7 @@ With tha basic stack you going to deploy:
 - **mysql admin interface**
 
 - **sonarqube**
-	- for sonarqube the dafault inital values are:
+	- for sonarqube the default initial values are:
 	- user: admin
 	- pass: admin
 > **Note**: Sonar is running with the default H2 database. If you want to use a persisted database, you have to include in this stack the required configuration. 
@@ -19,7 +19,7 @@ With tha basic stack you going to deploy:
 
 ### How to use it:
 
-Deploy the stack with the following comand
+Deploy the stack with the following command
 
 ```sh 
  docker-compose up -d
@@ -61,7 +61,7 @@ Start / Stop the stack
 
 ### Java
 
-1. If you are using `mvn` and have been using the defaul stack that is in this repo. only need to execute or include the following command for each java app.  
+1. If you are using `mvn` and have been using the default stack that is in this repo. only need to execute or include the following command for each java app.  
 
 ```sh
 mvn sonar:sonar
