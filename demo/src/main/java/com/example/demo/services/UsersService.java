@@ -35,7 +35,7 @@ public class UsersService {
 		return userList;
 	}
 
-	public UserDto getUserById(int id) throws Exception {
+	public UserDto getUserById(int id) throws ServiceException {
 		try {
 			Optional<User> user = repo.findById(id);
 			if (!user.isEmpty()) {
@@ -54,7 +54,7 @@ public class UsersService {
 		return modelMapper.map(user, UserDto.class);
 	}
 
-	public void deleteUserById(int id) throws Exception {
+	public void deleteUserById(int id) throws ServiceException {
 		try {
 			repo.deleteById(id);
 		} catch (Exception e) {
