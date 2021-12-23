@@ -34,9 +34,25 @@ public class UsersService {
 		return userList;
 	}
 	
+	public UserDto getUserById(int id) throws Exception {
+		try{		
+			return modelMapper.map(repo.findById(id).get(), UserDto.class);
+		}catch (Exception e) {
+			throw new Exception("User doesn't exist");
+		}		
+	}
+	
 	public UserDto addUser(UserDto userDto) {		
 		User user = modelMapper.map(userDto, User.class);
 		repo.save(user);
 		return modelMapper.map(user, UserDto.class);
 	}
+
+	public void deleteUserById(int id) throws Exception {
+		try {
+			repo.deleteById(id);	
+		}catch (Exception e) {
+			throw new Exception("User doesn't exist");
+		}
+	}	
 }
