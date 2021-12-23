@@ -4,15 +4,20 @@ services:
 
   db:
     image: mysql
+    hostname: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: school
+      MYSQL_USER: demo-user
+      MYSQL_PASSWORD: Nbmna.?ha1213
     ports:
       - 3306:3306
 
   adminer:
     image: adminer
+    hostname: sql-admin
     restart: always
     ports:
       - 9080:8080
@@ -21,6 +26,8 @@ services:
       
   sonar:
     image: sonarqube
+    hostname: sonar
     restart: always
     ports:
-      - 9000:9000       
+      - 9000:9000
+

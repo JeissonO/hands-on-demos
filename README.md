@@ -11,7 +11,7 @@ With tha basic stack you going to deploy:
 - **mysql admin interface**
 
 - **sonarqube**
-	- for sonarqube the dafault inital values are:
+	- for sonarqube the default initial values are:
 	- user: admin
 	- pass: admin
 > **Note**: Sonar is running with the default H2 database. If you want to use a persisted database, you have to include in this stack the required configuration. 
@@ -19,7 +19,7 @@ With tha basic stack you going to deploy:
 
 ### How to use it:
 
-Deploy the stack with the following comand
+Deploy the stack with the following command
 
 ```sh 
  docker-compose up -d
@@ -47,11 +47,23 @@ Start / Stop the stack
 
 ## Execute Sonar 
 
+### Disable Force User Authentication
+
+> This is only for use in a local machine.
+
+
+1. Go to sonar GUI [http://localhost:9000](http://localhost:9000)
+2. Go to administration section
+3. In security change the value of `Force user authentication` to false
+4. Save changes
+
+![force auth](./img/sonar-force-auth.png)
+
 ### Java
 
-1. If you are using `mvn` and have been using the defaul stack that is in this repo. only need to execute or onclude the follofing command foir each java app.
+1. If you are using `mvn` and have been using the default stack that is in this repo. only need to execute or include the following command for each java app.  
 
 ```sh
 mvn sonar:sonar
 ```
-> ***Note:*** If you are using a diferent sonar server or sonar cloud you nedd to configure each project accordingly with your server or account. 
+> ***Note:*** If you are using a different sonar server or sonar cloud, you need to configure each project accordingly with your server or account. 

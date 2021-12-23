@@ -3,9 +3,11 @@ package com.example.demo.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.UserDto;
 import com.example.demo.model.User;
 import com.example.demo.model.repo.UserRepository;
 
@@ -14,18 +16,43 @@ public class UsersService {
 	
 	@Autowired 
 	private UserRepository repo;
+	@Autowired
+	private ModelMapper modelMapper;
 	
-	public List<User> getAllUsers(){
+	
+	public UsersService(UserRepository repo, ModelMapper modelMapper) {		
+		this.repo = repo;
+		this.modelMapper = modelMapper;
+	}
+
+	public List<UserDto> getAllUsers(){
 		Iterable<User> users = repo.findAll();
-		List<User> userList = new ArrayList<>();
+		List<UserDto> userList = new ArrayList<>();
 		for(User user : users) {
-			userList.add(user);
+			userList.add(modelMapper.map(user, UserDto.class));
 		}
 		return userList;
 	}
 	
-	public User addUser(User user) {		
-		repo.save(user);
-		return user;
+	public UserDto getUserById(int id) throws Exception {
+		try{		
+			return modelMapper.map(repo.findById(id).get(), UserDto.class);
+		}catch (Exception e) {
+			throw new Exception("User doesn't exist");
+		}		
 	}
+	
+	public UserDto addUser(UserDto userDto) {		
+		User user = modelMapper.map(userDto, User.class);
+		repo.save(user);
+		return modelMapper.map(user, UserDto.class);
+	}
+
+	public void deleteUserById(int id) throws Exception {
+		try {
+			repo.deleteById(id);	
+		}catch (Exception e) {
+			throw new Exception("User doesn't exist");
+		}
+	}	
 }
