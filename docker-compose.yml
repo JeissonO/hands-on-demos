@@ -31,18 +31,3 @@ services:
     ports:
       - 9000:9000
 
-  demo:
-    image: demo
-    hostname: demo
-    build:
-      args:
-        MYSQL_HOST: mysql
-        MYSQL_DATABASE: school
-        MYSQL_USER: demo-user
-        MYSQL_PASSWORD: Nbmna.?ha1213
-      dockerfile: Dockerfile
-      context: ./demo
-    ports:
-      - 8081:8080
-    depends_on:
-      - db
