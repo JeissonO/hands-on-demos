@@ -21,37 +21,37 @@ import com.example.demo.services.UsersService;
 @RequestMapping(path="/users")
 @CrossOrigin(origins = "*")
 public class UsersCtrl {
-	
-	@Autowired 
+
+	@Autowired
 	private UsersService service;
-	
+
 	public UsersCtrl(UsersService usersService) {
 		this.service = usersService;
 	}
-	
+
 	@GetMapping("/health")
 	public ResponseEntity<String> health() {
 		return new ResponseEntity<>("Exitoso", HttpStatus.OK);
 	}
 	@GetMapping("/")
-	public ResponseEntity<List<UserDto>> getAllUsers(){		
-		return new ResponseEntity<>(service.getAllUsers(), HttpStatus.OK); 
+	public ResponseEntity<List<UserDto>> getAllUsers(){
+		return new ResponseEntity<>(service.getAllUsers(), HttpStatus.OK);
 	}
 	@GetMapping("/{id}")
-	public ResponseEntity<Object> getUserById(@PathVariable("id") int id){		
+	public ResponseEntity<Object> getUserById(@PathVariable("id") int id){
 		try {
 			UserDto userRs = service.getUserById(id);
 			return new ResponseEntity<>(userRs , HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}	 
+		}
 	}
-	
+
 	@PostMapping("/new")
-	public ResponseEntity<UserDto> addUser(@RequestBody UserDto userDto){		
-		return new ResponseEntity<>(service.addUser(userDto), HttpStatus.OK); 
+	public ResponseEntity<UserDto> addUser(@RequestBody UserDto userDto){
+		return new ResponseEntity<>(service.addUser(userDto), HttpStatus.OK);
 	}
-	
+
 	@DeleteMapping("/user/{id}")
 	public ResponseEntity<String> deleteUser(@PathVariable("id") int id) {
 		try {
@@ -59,7 +59,7 @@ public class UsersCtrl {
 			return new ResponseEntity<>("Success" , HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}		
+		}
 	}
 
 }

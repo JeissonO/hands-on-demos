@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Data
-@Entity 
+@Entity
 @Table(name = "USER")
 public class User {
   @Id
@@ -20,5 +20,5 @@ public class User {
   @Column(name = "NAME")
   private String name;
   @Column(name = "EMAIL")
-  private String email;  
+  private String email;
 }

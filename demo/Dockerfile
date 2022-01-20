@@ -15,7 +15,7 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 # Create the docker image
 # docker build -t demo .
 # Run the container
-# 
+#
 # docker run -d -p 8080:8080 --name demo -e MYSQL_HOST=$MYSQL_HOST -e MYSQL_DATABASE=$MYSQL_DATABASE -e MYSQL_USER=$MYSQL_USER -e MYSQL_PASSWORD=$MYSQL_PASSWORD demo:latest
 # or
 # docker run -d -p 8080:8080 --name demo -e MYSQL_HOST=192.168.0.10 -e MYSQL_DATABASE=school -e MYSQL_USER=demo-user -e MYSQL_PASSWORD="Nbmna.?ha1213" demo:latest

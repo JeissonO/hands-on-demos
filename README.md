@@ -1,6 +1,6 @@
 ## Launch initial stack
 
-You can run a initial stack using docker and docker compose. 
+You can run a initial stack using docker and docker compose.
 
 With tha basic stack you going to deploy:
 - **mysql** database
@@ -14,14 +14,14 @@ With tha basic stack you going to deploy:
 	- for sonarqube the default initial values are:
 	- user: admin
 	- pass: admin
-> **Note**: Sonar is running with the default H2 database. If you want to use a persisted database, you have to include in this stack the required configuration. 
- 
+> **Note**: Sonar is running with the default H2 database. If you want to use a persisted database, you have to include in this stack the required configuration.
+
 
 ### How to use it:
 
 Deploy the stack with the following command
 
-```sh 
+```sh
  docker-compose up -d
  # or
  docker-compose -p dev up -d
@@ -29,23 +29,23 @@ Deploy the stack with the following command
 
 Remove / Destroy the stack
 
-```sh 
+```sh
  docker-compose down
- # or 
+ # or
  docker-compose -p dev down
 ```
 
 Start / Stop the stack
 
-```sh 
+```sh
  docker-compose start
  docker-compose stop
- # or 
+ # or
  docker-compose -p dev start
  docker-compose -p dev stop
 ```
 
-## Execute Sonar 
+## Execute Sonar
 
 ### Disable Force User Authentication
 
@@ -61,9 +61,9 @@ Start / Stop the stack
 
 ### Java
 
-1. If you are using `mvn` and have been using the default stack that is in this repo. only need to execute or include the following command for each java app.  
+1. If you are using `mvn` and have been using the default stack that is in this repo. only need to execute or include the following command for each java app.
 
 ```sh
 mvn sonar:sonar
 ```
-> ***Note:*** If you are using a different sonar server or sonar cloud, you need to configure each project accordingly with your server or account. 
+> ***Note:*** If you are using a different sonar server or sonar cloud, you need to configure each project accordingly with your server or account.
