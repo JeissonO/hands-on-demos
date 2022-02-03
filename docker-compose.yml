@@ -14,6 +14,8 @@ services:
       MYSQL_PASSWORD: Nbmna.?ha1213
     ports:
       - 3306:3306
+    networks:
+      - demo-network
 
   adminer:
     image: adminer
@@ -23,6 +25,8 @@ services:
       - 9080:8080
     depends_on:
       - db
+    networks:
+      - demo-network
 
   sonar:
     image: sonarqube
@@ -30,3 +34,9 @@ services:
     restart: always
     ports:
       - 9000:9000
+    networks:
+      - demo-network
+
+networks:
+  demo-network:
+    driver: bridge
