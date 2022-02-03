@@ -22,9 +22,9 @@ With tha basic stack you going to deploy:
 Deploy the stack with the following command
 
 ```sh
- docker-compose up -d
+ docker-compose up --build -d
  # or
- docker-compose -p dev up -d
+ docker-compose -p dev --build up -d
 ```
 
 Remove / Destroy the stack
