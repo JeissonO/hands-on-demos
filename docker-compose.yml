@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.5'
 
 services:
 
@@ -40,8 +40,8 @@ services:
     networks:
       - demo-network
 
-  demo:
-    container_name: demo-service-1
+  service-1:
+    container_name: service-1
     image: demo:latest
     hostname: demo
     build:
@@ -61,4 +61,5 @@ services:
 
 networks:
   demo-network:
+    name: demo-network
     driver: bridge
