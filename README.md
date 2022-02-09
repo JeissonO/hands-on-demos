@@ -68,7 +68,25 @@ mvn sonar:sonar
 ```
 > ***Note:*** If you are using a different sonar server or sonar cloud, you need to configure each project accordingly with your server or account.
 
+_____________
 
-### Angular App (demo-app)
+
+## Angular App (demo-app)
 
 This angular app was built according to the instructions in the following Angular [tutorial](https://angular.io/tutorial).
+
+**Manual Run**:
+1. Go to `demo-app` folder
+2. Install all required dependencies
+```sh
+ npm install
+```
+3. Run the application.
+```sh
+ ng serve -o
+```
+
+
+> **Notes**:
+> - To run this angular app, you would need angular 12 or greater.
+> - This `demo-app` uses the API Rest that is located in `demo` folder.
