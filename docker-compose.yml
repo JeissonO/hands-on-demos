@@ -59,6 +59,20 @@ services:
     networks:
       - demo-network
 
+  demo-app:
+    container_name: demo-app
+    image: demo-app:latest
+    hostname: demo-app
+    build:
+      context: demo-app
+      dockerfile: Dockerfile
+    ports:
+      - 8000:80
+    depends_on:
+      - service-1
+    networks:
+      - demo-network
+
 networks:
   demo-network:
     name: demo-network
