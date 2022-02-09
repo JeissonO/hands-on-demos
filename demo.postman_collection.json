@@ -11,15 +11,39 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/users/",
+					"raw": "http://localhost:8081/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"users",
-						""
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsers-filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/users?name=m",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "m"
+						}
 					]
 				}
 			},
@@ -52,7 +76,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\" : \"simon@mp.com\",\n    \"name\" : \"Simon\"\n}",
+					"raw": "{\n    \"id\": 4,\n    \"email\" : \"romanov@avengers.com\",\n    \"name\" : \"BlackWidow2\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -79,17 +103,8 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"email\" : \"juancho@mp.com\",\n    \"name\" : \"Juan\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8081/users/user/5",
+					"raw": "http://localhost:8081/users/user/7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -98,7 +113,7 @@
 					"path": [
 						"users",
 						"user",
-						"5"
+						"7"
 					]
 				}
 			},
