@@ -4,10 +4,12 @@
   <div>id: {{hero.id}}</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name"><p>
+    <label for="hero-email">E-mail: </label>
+    <input id="hero-email" [(ngModel)]="hero.email" placeholder="email">
   </div>
 
-</div>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
 
-<button type="button" (click)="goBack()">go back</button>
-<button type="button" (click)="save()">save</button>
+</div>
