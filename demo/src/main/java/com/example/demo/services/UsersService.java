@@ -26,8 +26,12 @@ public class UsersService {
 		this.modelMapper = modelMapper;
 	}
 
-	public List<UserDto> getAllUsers() {
-		Iterable<User> users = repo.findAll();
+	public List<UserDto> getAllUsers(String name) {
+		Iterable<User> users;
+		if (name != null)
+			users = repo.findByNameContaining(name);
+		else
+			users = repo.findAll();
 		List<UserDto> userList = new ArrayList<>();
 		for (User user : users) {
 			userList.add(modelMapper.map(user, UserDto.class));

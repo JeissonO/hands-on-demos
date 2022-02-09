@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.UserDto;
@@ -33,9 +34,9 @@ public class UsersCtrl {
 	public ResponseEntity<String> health() {
 		return new ResponseEntity<>("Exitoso", HttpStatus.OK);
 	}
-	@GetMapping("/")
-	public ResponseEntity<List<UserDto>> getAllUsers(){
-		return new ResponseEntity<>(service.getAllUsers(), HttpStatus.OK);
+	@GetMapping("")
+	public ResponseEntity<List<UserDto>> getAllUsers(@RequestParam(name = "name",required = false) String name){
+		return new ResponseEntity<>(service.getAllUsers(name), HttpStatus.OK);
 	}
 	@GetMapping("/{id}")
 	public ResponseEntity<Object> getUserById(@PathVariable("id") int id){
