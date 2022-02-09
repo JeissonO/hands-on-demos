@@ -67,3 +67,8 @@ Start / Stop the stack
 mvn sonar:sonar
 ```
 > ***Note:*** If you are using a different sonar server or sonar cloud, you need to configure each project accordingly with your server or account.
+
+
+### Angular App (demo-app)
+
+This angular app was built according to the instructions in the following Angular [tutorial](https://angular.io/tutorial).
